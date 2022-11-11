@@ -7,7 +7,7 @@
 
 import Foundation
 
-class MovieService {
+final class MovieService {
   func downloadMovies(completion: @escaping ([Movie]?) -> ()) {
     guard let url = URL(string: APIURLs.movies(page: 1)) else { return }
     
@@ -31,7 +31,8 @@ class MovieService {
     do {
       let movie = try JSONDecoder().decode(MovieResult.self, from: data)
       return movie.results
-    } catch {
+    }
+    catch {
       print(error)
       return nil
     }
