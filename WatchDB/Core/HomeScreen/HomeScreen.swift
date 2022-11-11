@@ -7,13 +7,15 @@
 
 import UIKit
 
-protocol HomeScreenInterface {
+protocol HomeScreenInterface: AnyObject {
   func configureVC()
+  func configureCollectionView()
 }
 
 final class HomeScreen: UIViewController {
 
-  private var viewModel = HomeViewModel()
+  private let viewModel = HomeViewModel()
+  private var collectionView: UICollectionView!
   
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,8 +28,34 @@ final class HomeScreen: UIViewController {
 
 extension HomeScreen: HomeScreenInterface {
   func configureVC() {
-    view.backgroundColor = .systemPink
+    view.backgroundColor = .systemBackground
   }
   
+  func configureCollectionView() {
+    collectionView = UICollectionView(frame: .zero, collectionViewLayout: UIHelper.createHomeFlowLayout())
+    view.addSubview(collectionView)
+    
+    collectionView.translatesAutoresizingMaskIntoConstraints = false
+    collectionView.delegate = self
+    collectionView.dataSource = self
+    collectionView.register(MovieCell.self, forCellWithReuseIdentifier: MovieCell.reuseID)
+    
+    collectionView.pinToEdgesOf(view: view)
+  }
+}
+
+extension HomeScreen: UICollectionViewDelegate, UICollectionViewDataSource {
+  func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    viewModel.movies.count
+  }
   
+  func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+    let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MovieCell.reuseID, for: indexPath) as! MovieCell
+    cell.setCell(movie: viewModel.movies[indexPath.item])
+    
+    return cell
+    
+  }
+  
+ 
 }
