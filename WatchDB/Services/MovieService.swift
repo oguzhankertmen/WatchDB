@@ -8,8 +8,8 @@
 import Foundation
 
 final class MovieService {
-  func downloadMovies(completion: @escaping ([Movie]?) -> ()) {
-    guard let url = URL(string: APIURLs.movies(page: 1)) else { return }
+  func downloadMovies(page: Int, completion: @escaping ([Movie]?) -> ()) {
+    guard let url = URL(string: APIURLs.movies(page: page )) else { return }
     
     NetworkManager.shared.download(url: url) { [weak self] result in
       guard let self = self else { return }

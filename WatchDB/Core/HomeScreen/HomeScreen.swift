@@ -10,6 +10,7 @@ import UIKit
 protocol HomeScreenInterface: AnyObject {
   func configureVC()
   func configureCollectionView()
+  func reloadCollectionView()
 }
 
 final class HomeScreen: UIViewController {
@@ -38,9 +39,12 @@ extension HomeScreen: HomeScreenInterface {
     collectionView.translatesAutoresizingMaskIntoConstraints = false
     collectionView.delegate = self
     collectionView.dataSource = self
-    collectionView.register(MovieCell.self, forCellWithReuseIdentifier: MovieCell.reuseID)
-    
+    collectionView.register(MovieCell.self, forCellWithReuseIdentifier: MovieCell.reuseID)    
     collectionView.pinToEdgesOf(view: view)
+  }
+  
+  func reloadCollectionView(){
+    collectionView.reloadOnMainThread()
   }
 }
 
@@ -54,7 +58,16 @@ extension HomeScreen: UICollectionViewDelegate, UICollectionViewDataSource {
     cell.setCell(movie: viewModel.movies[indexPath.item])
     
     return cell
+  }
+  
+  func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+    let offsetY = scrollView.contentOffset.y
+    let contentHeight = scrollView.contentSize.height
+    let height = scrollView.frame.size.height
     
+    if offsetY >= contentHeight - (2 * height) {
+      viewModel.getMovies()
+    }
   }
   
  

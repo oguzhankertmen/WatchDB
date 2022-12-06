@@ -14,8 +14,8 @@
             filePath = "WatchDB/Core/HomeScreen/HomeViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "30"
-            endingLineNumber = "30"
+            startingLineNumber = "31"
+            endingLineNumber = "31"
             landmarkName = "getMovies()"
             landmarkType = "7">
          </BreakpointContent>
@@ -24,7 +24,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "C4DC2D0F-4029-4C4B-B261-D51C54BE791B"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "WatchDB/Utilities/NetworkManager.swift"
@@ -36,26 +36,11 @@
             landmarkType = "7">
             <Locations>
                <Location
-                  uuid = "C4DC2D0F-4029-4C4B-B261-D51C54BE791B - 65b3085211098c74"
+                  uuid = "C4DC2D0F-4029-4C4B-B261-D51C54BE791B - ab05c8baa4f78bef"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "WatchDB.NetworkManager.download(url: Foundation.URL, completion: (Swift.Result&lt;Foundation.Data, Swift.Error&gt;) -&gt; ()) -&gt; ()"
-                  moduleName = "WatchDB"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/oguzhankertmen/Developer/Projects/WatchDB/WatchDB/Utilities/NetworkManager.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "15"
-                  endingLineNumber = "15"
-                  offsetFromSymbolStart = "166">
-               </Location>
-               <Location
-                  uuid = "C4DC2D0F-4029-4C4B-B261-D51C54BE791B - 9ce67d88fe87ca35"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 @Sendable (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in WatchDB.NetworkManager.download(url: Foundation.URL, completion: (Swift.Result&lt;Foundation.Data, Swift.Error&gt;) -&gt; ()) -&gt; ()"
+                  symbolName = "WatchDB.NetworkManager.download(url: Foundation.URL, completion: (Swift.Result&lt;Foundation.Data, Swift.Error&gt;) -&gt; ()) -&gt; __C.NSURLSessionDataTask"
                   moduleName = "WatchDB"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/oguzhankertmen/Developer/Projects/WatchDB/WatchDB/Utilities/NetworkManager.swift"
@@ -63,6 +48,21 @@
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "16"
                   endingLineNumber = "16"
+                  offsetFromSymbolStart = "174">
+               </Location>
+               <Location
+                  uuid = "C4DC2D0F-4029-4C4B-B261-D51C54BE791B - 46b2810da064fbd2"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 @Sendable (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in WatchDB.NetworkManager.download(url: Foundation.URL, completion: (Swift.Result&lt;Foundation.Data, Swift.Error&gt;) -&gt; ()) -&gt; __C.NSURLSessionDataTask"
+                  moduleName = "WatchDB"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/oguzhankertmen/Developer/Projects/WatchDB/WatchDB/Utilities/NetworkManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "17"
+                  endingLineNumber = "17"
                   offsetFromSymbolStart = "296">
                </Location>
             </Locations>
